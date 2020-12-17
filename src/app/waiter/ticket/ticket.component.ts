@@ -48,6 +48,11 @@ export class TicketComponent implements OnInit {
   orderPlaced(): void {
     const order: Order = {orderNum: this.num, waiter: this.waiter, table: this.table, customer: this.name, products: this.breakProduct.concat(this.lunchProduct)};
     this.fireStore.add(order);
-    Swal.fire('Thank you...', 'Order sent succesfully!!', 'success');
+    // Swal.fire('Thank you...', 'Order sent succesfully!!', 'success');
   }
+
+  alertWithSuccess() {
+    Swal.fire('Thank you...', 'Order has been send succesfully!', 'success')
+  } 
+
 }
